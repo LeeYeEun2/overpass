@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!ELEMENT tables (table)*>
+<!ATTLIST tables
+package CDATA #REQUIRED
+>
+
+<!ELEMENT table (column)*>
+<!ATTLIST table
+name CDATA #REQUIRED
+dtoOnly (true | false) #IMPLIED
+dao (all | readonly | trx) #IMPLIED
+>
+
+<!ELEMENT column (#PCDATA)*>
+<!ATTLIST column
+name CDATA #REQUIRED
+typeHandler (cardno | ssn | normal) #IMPLIED
+substitution (true | false) #IMPLIED
+virtual (true | false) #IMPLIED
+>
+
