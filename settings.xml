@@ -23,7 +23,7 @@
 		<mirror>
 			<id>overpass-nexus</id>
 			<mirrorOf>*</mirrorOf>
-			<url>http://129.152.138.20/nexus/content/groups/public/</url>
+			<url>http://10.197.124.102/nexus/content/groups/public/</url>
 		</mirror>
 	</mirrors>
 	
@@ -34,7 +34,7 @@
 				<repository>
 					<id>central</id>
 					<name>Maven Repository Switchboard</name>
-					<url>http://129.152.138.20/nexus/content/groups/public/</url>
+					<url>http://10.197.124.102/nexus/content/groups/public/</url>
 					<releases>
 						<enabled>true</enabled>
 					</releases>
@@ -46,7 +46,7 @@
 			<pluginRepositories>
 				<pluginRepository>
 					<id>central</id>
-					<url>http://129.152.138.20/nexus/content/groups/public/</url>
+					<url>http://10.197.124.102/nexus/content/groups/public/</url>
 					<releases>
 						<enabled>true</enabled>
 					</releases>
@@ -64,6 +64,5 @@
 	
 	<activeProfiles>
 		<activeProfile>overpass-nexus</activeProfile>
-	</activeProfiles>	
-
+	</activeProfiles>		
 </settings>

@@ -13,7 +13,7 @@
 		<springframework-version>4.3.7.RELEASE</springframework-version>
 		<hazelcast-version>3.4.8</hazelcast-version>
 		<mybatis-artifactId>overpass-mybatis-3.4.4</mybatis-artifactId>
-		<overpass-snapshots-url>http://129.152.138.20/nexus/content/repositories/snapshots</overpass-snapshots-url>
+		<overpass-snapshots-url>http://10.197.124.102/nexus/content/repositories/snapshots</overpass-snapshots-url>
 	</properties>
 
 	<build>
@@ -310,5 +310,4 @@
 		</dependency>		
 
 	</dependencies>
-
 </project>
