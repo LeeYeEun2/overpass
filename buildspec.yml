@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+  pre_build:
+    commands:
+      - cp ./settings.xml /root/.m2/settings.xml
+
+  build:
+    commands:
+      - echo Build started on `date`
+      #- mkdir -p common
+      #- cp ../01/pom.xml ./common
+      #- mkdir common && aws s3 cp s3://kr.co.dwhf/public/pom.xml ./common/pom.xml
+      #- mvn -Dmaven.test.skip=true clean package # maven build command
+      - mvn deploy -DrepositoryId=s3Repo
+      - printenv
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - BUILD_TIME=`date "+%Y%m%d"`
+      #- mv target/*.war target/$finalName-$BUILD_TIME-$CODEBUILD_BUILD_NUMBER.war
+      #- mvn deploy:deploy-file -DgroupId=kr.co.dwhf -DartifactId=overpass-payments -Dversion=1.0.0-SNAPSHOT -Dfile=./target/overpass-overpass-payments-1.0.0-SNAPSHOT.jar -DrepositoryId=s3Repo -Durl=s3://kr.co.dwhf/public/
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
+
+#artifacts: # build result configuration
+#  files:
+    #- target/*.war # build result file name and path
+    #- appspec.yml  # Spec for CodeDeploy
+    #- scripts/*   # Scripts for CodeDeploy
+#  discard-paths: yes
